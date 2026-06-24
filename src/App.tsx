@@ -14,8 +14,13 @@ function App() {
     setResultado(total);
   };
 
+  const percentual =
+    meta && vendas
+      ? Math.min((Number(vendas) / Number(meta)) * 100, 100)
+      : 0;
+
   return (
-    <div>
+    <div className="container">
       <h1>Performance</h1>
 
       <input
@@ -25,16 +30,12 @@ function App() {
         onChange={(e) => setMeta(e.target.value)}
       />
 
-      <br /><br />
-
       <input
         type="number"
         placeholder="Valor vendido"
         value={vendas}
         onChange={(e) => setVendas(e.target.value)}
       />
-
-      <br /><br />
 
       <input
         type="number"
@@ -43,19 +44,36 @@ function App() {
         onChange={(e) => setComissao(e.target.value)}
       />
 
-      <br /><br />
-
       <button onClick={calcular}>
-        Calcular
+        Calcular Comissão
       </button>
 
       {resultado !== null && (
-        <div>
+        <div className="resultado">
           <h2>Resultado</h2>
-          <p>Comissão: R$ {resultado.toFixed(2)}</p>
+
           <p>
-            Meta atingida: {Number(vendas) >= Number(meta) ? "✅ Sim" : "❌ Não"}
+            <strong>Comissão:</strong> R$ {resultado.toFixed(2)}
           </p>
+
+          <p>
+            <strong>Meta atingida:</strong>{" "}
+            {Number(vendas) >= Number(meta)
+              ? "✅ Sim"
+              : "❌ Não"}
+          </p>
+
+          <p>
+            <strong>Percentual atingido:</strong>{" "}
+            {percentual.toFixed(1)}%
+          </p>
+
+          <div className="barra">
+            <div
+              className="progresso"
+              style={{ width: `${percentual}%` }}
+            ></div>
+          </div>
         </div>
       )}
     </div>
