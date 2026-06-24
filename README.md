@@ -1,32 +1,27 @@
-# React + TypeScript + Vite
+# Performance
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Performance é uma aplicação web desenvolvida para auxiliar no acompanhamento de metas comerciais e cálculo de comissões.
 
-Currently, two official plugins are available:
+O projeto nasceu da necessidade de transformar processos que vivenciei nas áreas administrativa e financeira em soluções digitais simples e eficientes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Cálculo de comissão
+- Acompanhamento de metas
+- Barra de progresso de desempenho
+- Indicadores de resultado
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias
 
-## Expanding the Oxlint configuration
+- React
+- TypeScript
+- Vite
+- CSS
+- Git/GitHub
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Próximas funcionalidades
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Dashboard de indicadores
+- Ranking de vendedores
+- Histórico mensal
+- Exportação de relatórios
