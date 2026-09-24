@@ -1,4 +1,4 @@
-# 📈 Performance — Gestão de Metas & Comissões
+# Performance — Gestão de Metas & Comissões
 
 [![Deploy to GitHub Pages](https://github.com/karla08C/performance/actions/workflows/deploy.yml/badge.svg)](https://github.com/karla08C/performance/actions/workflows/deploy.yml)
 [![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](https://react.dev/)
@@ -8,7 +8,7 @@
 
 > Aplicação web desenvolvida para cálculo ágil de comissões comerciais e acompanhamento visual do atingimento de metas corporativas em tempo real.
 
-🔗 **[Acessar Demonstração Online (Live Demo)](https://karla08c.github.io/performance/)**
+[Acessar Demonstração Online (Live Demo)](https://karla08c.github.io/performance/)
 
 ---
 
@@ -18,24 +18,24 @@
 
 ---
 
-## 🎯 Contexto do Projeto & Motivação
+## Contexto do Projeto e Motivação
 Este projeto nasceu da experiência prática nas áreas **Administrativa, Financeira e de Controladoria**. Em muitas empresas, o cálculo de comissões e o acompanhamento de metas ainda dependem de planilhas manuais suscetíveis a erros humanos e retrabalho.
 
 O **Performance** conecta essa bagagem de processos de negócios com **Engenharia de Software moderna**, transformando regras de comissionamento em uma solução digital reativa, tipada e com feedback visual instantâneo para vendedores e gestores.
 
 ---
 
-## ⚡ Funcionalidades Atuais
+## Funcionalidades Atuais
 
-- 💰 **Cálculo Dinâmico de Comissão:** Apuração instantânea com base no volume vendido e percentual estipulado.
-- 🎯 **Monitoramento de Metas:** Cálculo percentual de atingimento da meta de vendas em tempo real.
-- 📊 **Barra de Progresso Visual:** Indicador gráfico de desempenho para acompanhamento intuitivo de resultados.
-- 🛡️ **Tipagem Estrita com TypeScript:** Consistência e validação de dados em toda a interface.
-- 📱 **Interface Responsiva:** Design otimizado para navegação em desktops e dispositivos móveis.
+- **Cálculo Dinâmico de Comissão:** Apuração instantânea com base no volume vendido e percentual estipulado.
+- **Monitoramento de Metas:** Cálculo percentual de atingimento da meta de vendas em tempo real.
+- **Barra de Progresso Visual:** Indicador gráfico de desempenho para acompanhamento intuitivo de resultados.
+- **Tipagem Estrita com TypeScript:** Consistência e validação de dados em toda a interface.
+- **Interface Responsiva:** Design otimizado para navegação em desktops e dispositivos móveis.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Frontend:** React 19
 - **Linguagem:** TypeScript
@@ -46,7 +46,7 @@ O **Performance** conecta essa bagagem de processos de negócios com **Engenhari
 
 ---
 
-## 💻 Como Executar Localmente
+## Como Executar Localmente
 
 ### Pré-requisitos
 - Node.js (versão 18 ou superior)
@@ -70,16 +70,16 @@ Acesse `http://localhost:5173/` no seu navegador.
 
 ---
 
-## 🔮 Roadmap de Evolução
+## Roadmap de Evolução
 - [ ] Dashboard com indicadores consolidados de vendas.
-- [ ] Ranking dinâmico de vendedores / gamificação.
+- [ ] Ranking dinâmico de vendedores e gamificação.
 - [ ] Histórico mensal e fechamento de períodos.
-- [ ] Exportação de relatórios em PDF / Excel.
+- [ ] Exportação de relatórios em PDF e planilhas.
 - [ ] Integração com banco de dados para autenticação multiusuário.
 
 ---
 
-## 👩‍💻 Autora
+## Autora
 
 Desenvolvido por **Karla Castro**  
 *Gestora de Comunidade Tech & Desenvolvedora de Software*
@@ -89,5 +89,5 @@ Desenvolvido por **Karla Castro**
 
 ---
 
-## 📄 Licença
+## Licença
 Distribuído sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais detalhes.
