@@ -1,56 +1,93 @@
-#  Performance
+# Performance — Gestão de Metas & Comissões
 
-Performance é uma aplicação web desenvolvida para auxiliar no acompanhamento de metas comerciais, cálculo de comissões e monitoramento de desempenho de vendas.
+[![Deploy to GitHub Pages](https://github.com/karla08C/performance/actions/workflows/deploy.yml/badge.svg)](https://github.com/karla08C/performance/actions/workflows/deploy.yml)
+[![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-O projeto nasceu da minha experiência nas áreas administrativa e financeira, onde muitos controles de metas, resultados e comissões ainda são realizados por meio de planilhas e processos manuais. A proposta é transformar essas rotinas em uma solução digital simples, intuitiva e escalável.
+> Aplicação web desenvolvida para cálculo ágil de comissões comerciais e acompanhamento visual do atingimento de metas corporativas em tempo real.
 
-##  Objetivo
+[Acessar Demonstração Online (Live Demo)](https://karla08c.github.io/performance/)
 
-Permitir que profissionais e gestores acompanhem resultados de vendas, visualizem o progresso em relação às metas estabelecidas e realizem cálculos de comissão de forma rápida e eficiente.
+---
 
-##  Funcionalidades
+<p align="center">
+  <img src="./src/assets/hero.png" alt="Interface da Plataforma Performance" width="650" />
+</p>
 
-* Cálculo automático de comissão
-* Acompanhamento de metas comerciais
-* Barra de progresso visual de desempenho
-* Indicadores de resultado
-* Interface simples e responsiva
+---
 
-## 🛠️ Tecnologias Utilizadas
+## Contexto do Projeto e Motivação
+Este projeto nasceu da experiência prática nas áreas **Administrativa, Financeira e de Controladoria**. Em muitas empresas, o cálculo de comissões e o acompanhamento de metas ainda dependem de planilhas manuais suscetíveis a erros humanos e retrabalho.
 
-* React
-* TypeScript
-* Vite
-* CSS
-* Git
-* GitHub
+O **Performance** conecta essa bagagem de processos de negócios com **Engenharia de Software moderna**, transformando regras de comissionamento em uma solução digital reativa, tipada e com feedback visual instantâneo para vendedores e gestores.
 
-##  Roadmap
+---
 
-Próximas funcionalidades planejadas:
+## Funcionalidades Atuais
 
-* Dashboard com indicadores de desempenho
-* Ranking de vendedores
-* Histórico mensal de resultados
-* Exportação de relatórios em PDF
-* Cadastro de vendedores
-* Simulação de metas e bonificações
+- **Cálculo Dinâmico de Comissão:** Apuração instantânea com base no volume vendido e percentual estipulado.
+- **Monitoramento de Metas:** Cálculo percentual de atingimento da meta de vendas em tempo real.
+- **Barra de Progresso Visual:** Indicador gráfico de desempenho para acompanhamento intuitivo de resultados.
+- **Tipagem Estrita com TypeScript:** Consistência e validação de dados em toda a interface.
+- **Interface Responsiva:** Design otimizado para navegação em desktops e dispositivos móveis.
 
-##  Como executar o projeto
+---
 
+## Tecnologias Utilizadas
+
+- **Frontend:** React 19
+- **Linguagem:** TypeScript
+- **Build Tool:** Vite 8
+- **Estilização:** CSS3 Moderno
+- **Qualidade de Código:** Oxlint
+- **CI/CD:** GitHub Actions com deploy contínuo no GitHub Pages
+
+---
+
+## Como Executar Localmente
+
+### Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm
+
+### Passo a passo
 ```bash
+# Clone o repositório
+git clone https://github.com/karla08C/performance.git
+
+# Acesse a pasta do projeto
+cd performance
+
+# Instale as dependências
 npm install
+
+# Inicie o servidor local
 npm run dev
 ```
+Acesse `http://localhost:5173/` no seu navegador.
 
-A aplicação estará disponível em:
+---
 
-```bash
-http://localhost:5173
-```
+## Roadmap de Evolução
+- [ ] Dashboard com indicadores consolidados de vendas.
+- [ ] Ranking dinâmico de vendedores e gamificação.
+- [ ] Histórico mensal e fechamento de períodos.
+- [ ] Exportação de relatórios em PDF e planilhas.
+- [ ] Integração com banco de dados para autenticação multiusuário.
 
-##  Desenvolvido por
+---
 
-Karla Castro
+## Autora
 
+Desenvolvido por **Karla Castro**  
+*Gestora de Comunidade Tech & Desenvolvedora de Software*
 
+- **LinkedIn:** [linkedin.com/in/karlaj-castro](https://www.linkedin.com/in/karlaj-castro/)
+- **GitHub:** [@karla08C](https://github.com/karla08C)
+
+---
+
+## Licença
+Distribuído sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais detalhes.
