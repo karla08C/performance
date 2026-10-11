@@ -25,13 +25,14 @@ O **Performance** conecta essa bagagem de processos de negócios com **Engenhari
 
 ---
 
-## Funcionalidades Atuais
+## Funcionalidades da Plataforma
 
-- **Cálculo Dinâmico de Comissão:** Apuração instantânea com base no volume vendido e percentual estipulado.
-- **Monitoramento de Metas:** Cálculo percentual de atingimento da meta de vendas em tempo real.
-- **Barra de Progresso Visual:** Indicador gráfico de desempenho para acompanhamento intuitivo de resultados.
-- **Tipagem Estrita com TypeScript:** Consistência e validação de dados em toda a interface.
-- **Interface Responsiva:** Design otimizado para navegação em desktops e dispositivos móveis.
+- **Painel Executivo do Vendedor:** Apuração em tempo real com indicador de status (Abaixo, Quase Lá, Meta Batida ou Superada).
+- **Simulador Interativo "What-If":** Permite ao vendedor simular vendas incrementais e descobrir exatamente quanto ganhará a mais na comissão.
+- **Aceleradores de Comissão & Super Bônus:** Regras automáticas de bonificação escalonada sobre excedentes e premiação fixa para metas superadas (>120%).
+- **Painel do Gestor (Configurações):** Parametrização em tempo real de taxas base, metas, aceleradores e bônus sem necessidade de alterar código.
+- **Métricas Transparentes:** Exibição clara de taxa efetiva, valor de comissão base, ganho por acelerador e gap restante para a meta.
+- **Tipagem Estrita com TypeScript:** Consistência e validação matemática de dados financeiros em toda a interface.
 
 ---
 

@@ -1,81 +1,101 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react';
+import type { CommissionRule, SellerData } from './types';
+import { calculateCommission } from './services/commissionEngine';
+import { Header } from './components/Header';
+import { SellerDashboard } from './components/SellerDashboard';
+import { WhatIfSimulator } from './components/WhatIfSimulator';
+import { ManagerSettings } from './components/ManagerSettings';
+import './App.css';
+
+const DEFAULT_RULE: CommissionRule = {
+  baseRate: 3.5,
+  enableAccelerator: true,
+  acceleratorThreshold: 100,
+  acceleratorRate: 1.5,
+  superBonusThreshold: 120,
+  superBonusFixed: 500,
+};
+
+const DEFAULT_SELLER: SellerData = {
+  id: '1',
+  name: 'Karla Castro',
+  role: 'Executiva de Contas Senior',
+  target: 50000,
+  actualSales: 42500,
+  period: 'Outubro / 2026',
+};
 
 function App() {
-  const [meta, setMeta] = useState("");
-  const [vendas, setVendas] = useState("");
-  const [comissao, setComissao] = useState("");
-  const [resultado, setResultado] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'simulator' | 'manager'>('dashboard');
+  const [seller, setSeller] = useState<SellerData>(DEFAULT_SELLER);
+  const [rule, setRule] = useState<CommissionRule>(DEFAULT_RULE);
 
-  const calcular = () => {
-    const total =
-      Number(vendas) * (Number(comissao) / 100);
+  const calculation = calculateCommission(seller.actualSales, seller.target, rule);
 
-    setResultado(total);
+  const handleUpdateSeller = (updated: Partial<SellerData>) => {
+    setSeller((prev) => ({ ...prev, ...updated }));
   };
 
-  const percentual =
-    meta && vendas
-      ? Math.min((Number(vendas) / Number(meta)) * 100, 100)
-      : 0;
+  const handleUpdateRule = (updated: Partial<CommissionRule>) => {
+    setRule((prev) => ({ ...prev, ...updated }));
+  };
+
+  const handleResetDefaults = () => {
+    setSeller(DEFAULT_SELLER);
+    setRule(DEFAULT_RULE);
+  };
 
   return (
-    <div className="container">
-      <h1>Performance</h1>
-
-      <input
-        type="number"
-        placeholder="Meta de vendas"
-        value={meta}
-        onChange={(e) => setMeta(e.target.value)}
+    <div className="app-layout">
+      <Header
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        seller={seller}
       />
 
-      <input
-        type="number"
-        placeholder="Valor vendido"
-        value={vendas}
-        onChange={(e) => setVendas(e.target.value)}
-      />
+      <main className="main-content">
+        {activeTab === 'dashboard' && (
+          <SellerDashboard
+            seller={seller}
+            calculation={calculation}
+            rule={rule}
+            onOpenSimulator={() => setActiveTab('simulator')}
+          />
+        )}
 
-      <input
-        type="number"
-        placeholder="Comissão (%)"
-        value={comissao}
-        onChange={(e) => setComissao(e.target.value)}
-      />
+        {activeTab === 'simulator' && (
+          <WhatIfSimulator
+            seller={seller}
+            currentCalculation={calculation}
+            rule={rule}
+          />
+        )}
 
-      <button onClick={calcular}>
-        Calcular Comissão
-      </button>
+        {activeTab === 'manager' && (
+          <ManagerSettings
+            seller={seller}
+            rule={rule}
+            onUpdateSeller={handleUpdateSeller}
+            onUpdateRule={handleUpdateRule}
+            onResetDefaults={handleResetDefaults}
+          />
+        )}
+      </main>
 
-      {resultado !== null && (
-        <div className="resultado">
-          <h2>Resultado</h2>
-
-          <p>
-            <strong>Comissão:</strong> R$ {resultado.toFixed(2)}
-          </p>
-
-          <p>
-            <strong>Meta atingida:</strong>{" "}
-            {Number(vendas) >= Number(meta)
-              ? "✅ Sim"
-              : "❌ Não"}
-          </p>
-
-          <p>
-            <strong>Percentual atingido:</strong>{" "}
-            {percentual.toFixed(1)}%
-          </p>
-
-          <div className="barra">
-            <div
-              className="progresso"
-              style={{ width: `${percentual}%` }}
-            ></div>
-          </div>
+      <footer className="app-footer">
+        <p>
+          <strong>Performance BI & Comissões</strong> • Desenvolvido por Karla Castro
+        </p>
+        <div className="footer-links">
+          <a href="https://github.com/karla08C/performance" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/karlaj-castro/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
         </div>
-      )}
+      </footer>
     </div>
   );
 }
