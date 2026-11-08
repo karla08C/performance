@@ -1,5 +1,9 @@
 import type { CommissionCalculation, CommissionRule, SimulationResult } from '../types';
 
+function round2(val: number): number {
+  return Math.round((val + Number.EPSILON) * 100) / 100;
+}
+
 export function calculateCommission(
   sales: number,
   target: number,
@@ -8,8 +12,8 @@ export function calculateCommission(
   const safeSales = Math.max(0, sales || 0);
   const safeTarget = Math.max(1, target || 1);
 
-  const attainmentPercent = (safeSales / safeTarget) * 100;
-  const baseCommission = safeSales * (rule.baseRate / 100);
+  const attainmentPercent = round2((safeSales / safeTarget) * 100);
+  const baseCommission = round2(safeSales * (rule.baseRate / 100));
 
   // Acelerador: incide sobre o faturamento que ultrapassar a meta (100%)
   let acceleratorCommission = 0;
@@ -17,7 +21,7 @@ export function calculateCommission(
   const gap = Math.max(0, safeTarget - safeSales);
 
   if (rule.enableAccelerator && attainmentPercent >= rule.acceleratorThreshold && surplus > 0) {
-    acceleratorCommission = surplus * (rule.acceleratorRate / 100);
+    acceleratorCommission = round2(surplus * (rule.acceleratorRate / 100));
   }
 
   // Bônus Fixo de Superação Máxima (ex: acima de 120%)
@@ -26,8 +30,8 @@ export function calculateCommission(
     superBonusAmount = rule.superBonusFixed;
   }
 
-  const totalCommission = baseCommission + acceleratorCommission + superBonusAmount;
-  const effectiveRate = safeSales > 0 ? (totalCommission / safeSales) * 100 : 0;
+  const totalCommission = round2(baseCommission + acceleratorCommission + superBonusAmount);
+  const effectiveRate = safeSales > 0 ? round2((totalCommission / safeSales) * 100) : 0;
 
   let status: 'abaixo' | 'quase' | 'atingida' | 'superada';
   if (attainmentPercent >= rule.superBonusThreshold) {
@@ -65,7 +69,7 @@ export function simulateWhatIf(
   const totalSimulated = currentSales + Math.max(0, additionalSales || 0);
   const simCalc = calculateCommission(totalSimulated, target, rule);
 
-  const incrementalGain = simCalc.totalCommission - currentCalc.totalCommission;
+  const incrementalGain = round2(simCalc.totalCommission - currentCalc.totalCommission);
   const wasUnderAccelerator = currentCalc.attainmentPercent < rule.acceleratorThreshold;
   const isNowUnderAccelerator = simCalc.attainmentPercent >= rule.acceleratorThreshold;
 

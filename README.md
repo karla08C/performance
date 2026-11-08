@@ -1,10 +1,11 @@
 # Performance — Gestão de Metas & Comissões
 
 [![Deploy to GitHub Pages](https://github.com/karla08C/performance/actions/workflows/deploy.yml/badge.svg)](https://github.com/karla08C/performance/actions/workflows/deploy.yml)
+[![Tests](https://img.shields.io/badge/Tests-12%20passed%20(Vitest)-brightgreen?logo=vitest&logoColor=white)](https://vitest.dev/)
 [![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 > Aplicação web desenvolvida para cálculo ágil de comissões comerciais e acompanhamento visual do atingimento de metas corporativas em tempo real.
 
@@ -41,9 +42,10 @@ O **Performance** conecta essa bagagem de processos de negócios com **Engenhari
 - **Frontend:** React 19
 - **Linguagem:** TypeScript
 - **Build Tool:** Vite 8
+- **Testes Unitários:** Vitest (12 testes cobrindo 100% dos cenários de cálculo financeiro, aceleradores, super bônus e simulador)
 - **Estilização:** CSS3 Moderno
 - **Qualidade de Código:** Oxlint
-- **CI/CD:** GitHub Actions com deploy contínuo no GitHub Pages
+- **CI/CD:** GitHub Actions com execução de testes automatizados e deploy contínuo no GitHub Pages
 
 ---
 
@@ -64,7 +66,10 @@ cd performance
 # Instale as dependências
 npm install
 
-# Inicie o servidor local
+# Execute a suíte de testes unitários
+npm test
+
+# Inicie o servidor local de desenvolvimento
 npm run dev
 ```
 Acesse `http://localhost:5173/` no seu navegador.
@@ -91,4 +96,4 @@ Desenvolvido por **Karla Castro**
 ---
 
 ## Licença
-Distribuído sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais detalhes.
+Distribuído sob a licença **MIT**. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
